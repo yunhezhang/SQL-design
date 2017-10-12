@@ -1,0 +1,29 @@
+<h3>Result</h3>
+   <div class="alert alert-info">This auction is: {{information}}</div>
+
+<ul>
+{% if search_result %}
+{% for result in search_result %}
+        {% for key in result %}
+                <div>
+                        <span>{{ key|e }}</span>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span>{{ result[key]|e }}</span>
+                </div>
+        {% endfor %}
+        <div>--------</div>
+{% endfor %}
+{% else %}
+<div>No Bids For This Auction</div>
+{% endif %}
+</ul>
+
+<ul>
+{% if winner %}
+  <div class="alert alert-info">The winner is: {{winner}}</div>
+{% else %}
+<div>No winner yet</div>
+{% endif %}
+</ul>
+
+
